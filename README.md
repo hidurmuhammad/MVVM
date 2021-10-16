@@ -5,3 +5,4 @@ Room Db,
 Work manager,
 Firebase - FCM,Analytics,Notification,Remote Config,Authentication,
 In-app Updates.
+NavGraph
