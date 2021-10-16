@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "138636984869",
+    "project_id": "mvvm-example-17d27",
+    "storage_bucket": "mvvm-example-17d27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138636984869:android:410ce7757afc0a0adb35cc",
+        "android_client_info": {
+          "package_name": "com.example.mvvmexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138636984869-bj68q232li40opal1s6hqethp4q2ps4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd7rdyfXkZoNy-Xldhge9Q7uwdF79HWhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138636984869-bj68q232li40opal1s6hqethp4q2ps4m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

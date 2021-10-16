@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".views.MainActivity">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/toolbar_with_content_main"/>
+
+<!--
+            <LinearLayout
+                android:id="@+id/bottom_nav_container"
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_navigation"
+                    style="@style/BottomNavBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_56dp"
+                    android:layout_gravity="bottom"
+                    android:background="?android:attr/windowBackground"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:elevation="@dimen/_8dp"
+                    app:itemIconSize="@dimen/_24dp"
+                    app:itemIconTint="@drawable/nav_color_state_list"
+                    app:itemTextColor="@drawable/nav_color_state_list"
+                    app:labelVisibilityMode="labeled"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:menu="@menu/bottom_navigation_items" />
+
+            </LinearLayout>
+-->
+
+
+        </FrameLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/nav_header" />
+                <include layout="@layout/navigation_drawer_items" />
+
+            </LinearLayout>
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

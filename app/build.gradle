@@ -1,0 +1,165 @@
+
+    apply plugin: 'com.android.application'
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
+    //apply plugin: 'kotlin-parcelize'
+    apply plugin: 'kotlin-kapt'
+    apply plugin: 'androidx.navigation.safeargs'
+    apply plugin: 'com.google.gms.google-services'
+    // Apply the Performance Monitoring plugin
+    apply plugin: 'com.google.firebase.firebase-perf'
+    // Apply the Crashlytics Gradle plugin
+    apply plugin: 'com.google.firebase.crashlytics'
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.mvvmexample"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    dataBinding {
+        enabled = true
+    }
+    androidExtensions {
+        experimental = true
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    buildTypes {
+        debug{
+            ext.enableCrashlytics = true
+            manifestPlaceholders = [crashlyticsEnabled: true]
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [crashlyticsEnabled: true]
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-config:21.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    // Koin for the dependencies injections
+    implementation 'org.koin:koin-android:2.0.0-rc-2'
+    implementation 'org.koin:koin-android-viewmodel:2.0.0-rc-2'
+    implementation 'org.koin:koin-androidx-scope:2.0.0-rc-2'
+
+    // for room
+    implementation 'androidx.room:room-runtime:2.3.0'
+    annotationProcessor 'androidx.room:room-compiler:2.3.0'
+    kapt 'androidx.room:room-compiler:2.3.0'
+
+    // Coroutines for asynchronous calls (and Deferred’s adapter)
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    configurations {
+        compile.exclude group: 'org.jetbrains.kotlinx', module: 'atomicfu-common'
+    }
+
+    // lifecycle
+    implementation 'androidx.lifecycle:lifecycle-compiler:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+
+    //recyclerview and cardView
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // navGraph
+
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.0-alpha06"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.0-alpha06"
+
+    // Dynamic Feature Module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.4.0-alpha06"
+
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:2.4.0-alpha06"
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    // Kotlin + coroutines
+    implementation 'androidx.work:work-runtime-ktx:2.6.0-rc01'
+
+    implementation 'io.coil-kt:coil:1.3.0'
+
+// Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:28.2.1')
+    // Add the dependency for the Firebase SDK for Google Analytics
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:20.1.0'
+    //retrieve installation id
+    implementation 'com.google.firebase:firebase-installations:17.0.0'
+
+    // Declare the dependency for the Performance Monitoring library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-perf'
+
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+
+//Remote config
+    implementation 'com.google.firebase:firebase-config:21.0.1'
+
+    implementation 'com.google.android.play:core:1.10.0'
+
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.1'
+    
+    //For chat message
+    implementation 'com.google.firebase:firebase-database:20.0.1'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+
+    // Firebase UI Library
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.0'
+    implementation 'com.firebaseui:firebase-ui-database:8.0.0'
+
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+}

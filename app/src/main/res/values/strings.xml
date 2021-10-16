@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MVVM Example</string>
+    <string name="no_network_connectivity">No Network Connectivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="channel_name">MVVM_Notification-1</string>
+    <string name="channel_description">Sample Notification for testing purpose</string>
+    <string name="default_notification_channel_id">MVVM_Notification-1</string>
+
+    <string name="client_id">138636984869-sturv1b9oaiufh8lekavbmdtufo3v9tm.apps.googleusercontent.com</string>
+
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+    <string name="login">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="create_new">Click here for register</string>
+    <string name="not_register">Not Register?</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="register">Register</string>
+    <string name="name_error">Please enter your name</string>
+    <string name="phone_error">Please enter a phone number</string>
+    <string name="email_error">Please enter a email address</string>
+    <string name="error_invalid_email">Email is not valid</string>
+    <string name="password_error">Please enter a password</string>
+    <string name="password_match">Password Does not match</string>
+    <string name="error_invalid_password">Please enter a minimum password of 6 characters</string>
+    <string name="reset">Reset Password</string>
+    <string name="forgot_password"> To reset Password, enter your email, press the
+        button and check mail to follow instruction.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
